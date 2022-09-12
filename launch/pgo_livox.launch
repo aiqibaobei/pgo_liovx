@@ -1,0 +1,11 @@
+<launch>
+<!-- Launch file for Livox AVIA LiDAR -->
+    <rosparam command="load" file="$(find  pgo_livox)/config/config.yaml" />
+    <node pkg="pgo_livox" type="pgo_livox" name="pgo_livox" output="screen" />
+
+    <arg name="rviz" default="true" />
+    <group if="$(arg rviz)">
+        <node launch-prefix="nice" pkg="rviz" type="rviz" name="rviz" args="-d $(find pgo_livox)/rviz/pgo_livox.rviz" />
+    </group>
+</launch>
+
