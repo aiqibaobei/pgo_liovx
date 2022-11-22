@@ -6,6 +6,7 @@ project(pgo_livox)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_FLAGS_RELEASE "-O3 -Wall -g")
+set(CMAKE_PREFIX_PATH "/opt/ros/noetic")
 
 set(ROS_DEP roscpp rospy std_msgs sensor_msgs nav_msgs cv_bridge image_transport)
 find_package(OpenCV 4.2 REQUIRED)

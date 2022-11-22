@@ -55,7 +55,7 @@ Pose3 Optimizer::pose2gtsamPose(MyPose &pose) {
   Eigen::Vector3d t = pose.t;
   Rot3 R = Rot3::Quaternion(q.w(), q.x(), q.y(), q.z());
   Point3 T(t.x(), t.y(), t.z());
-  return Pose3(R, T);
+  return {R, T};
 }
 
 //prior factor
@@ -84,7 +84,7 @@ void Optimizer::addFactor(int histIndex, int curIndex, Eigen::Matrix4f &trans) {
   mtxGraph.lock();
   graph.add(gtsam::BetweenFactor<gtsam::Pose3>(histIndex, curIndex, Pose3(R, t), robustLoopNoise));
   mtxGraph.unlock();
-  cout << "\033[32m" << "[GRAPH NODE ADD] icp succed , loop factor added btn " << curIndex << " and " << histIndex
+  cout << "\033[32m" << "[GRAPH NODE ADD] registered succed , loop factor added btn " << curIndex << " and " << histIndex
        << "\033[37m" << endl;
 }
 

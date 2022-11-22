@@ -67,15 +67,15 @@ class PointCloudMatcher {
   //pub data for visualize
   void pubCurImg(ros::Publisher &pubCur);
   void pubLoopImg(int idxCur, int idxHist, ros::Publisher &pubCur, ros::Publisher &pubHist);
-  void pubLoopScan(PointCloudXYZI & src,
+  static void pubLoopScan(PointCloudXYZI & src,
                    PointCloudXYZI & tar,
                    ros::Publisher &pubCur,
                    ros::Publisher &pubHist);
-  sensor_msgs::ImagePtr getImage(MatrixXd &desc);
+  sensor_msgs::ImagePtr getImage(MatrixXd &desc) const;
   //for icp
   bool canGetTransformBetweenPCs(PointCloudXYZI &src,
                                  PointCloudXYZI &tar,
-                                 Matrix4f &guess,Matrix4f &result);
+                                 Matrix4f &guess,Matrix4f &result) const;
 
  public:
   //for pc process

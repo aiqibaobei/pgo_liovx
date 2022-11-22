@@ -1,8 +1,8 @@
 #file:
-#path: "/home/dlx/dbg/"
+path: "/home/h305/dbg/"
 #keyframe:
-keyframe_rot_threshold: 10
-keyframe_trans_threshols: 0.5
+keyframe_rot_threshold: 15
+keyframe_trans_threshols: 1
 #desc:
 down_leaf_size: 0.4
 ring_num: 20
@@ -14,15 +14,15 @@ period_build_tree: 30
 num_recent_frames: 30
 candidate_num: 3
 merge_pcd_num: 25
-fov: 70.4 #70.4
+fov: 72 #70.4
 search_ratio: 0.1
-loop_threshold: 0.2
+loop_threshold: 0.3
 #icp:
-icp_max_iter: 30
+icp_max_iter: 50
 icp_corr_dis: 500
 icp_trans_eps: 1e-6
 icp_eucl_eps: 1e-6
-icp_use_ransac: 20
-icp_type: 1
+icp_use_ransac: 0
+icp_type: 0
 
 if_down_size: false
